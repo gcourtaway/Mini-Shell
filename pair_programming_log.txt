@@ -1,0 +1,66 @@
+Use of Atom's Teletype which allowed us to work in the same project with real time typing
+So when I say driving i mean we were working on that persons computer as the "hub" because they would have
+to use the terminal as it wouldnt be updated on the other. We tried to switch this every 30 min unless debugging
+
+9/11 12:00pm - 6:00pm Gage, Miguel, 6 hours
+Driving Order and Time Length
+Driving- 30 minutes Gage
+Driving - 30 minutes Miguel
+Implementation - 1 hour Miguel and Gage
+Debugging - 4 hours Miguel and Gage
+
+9:11 6:00-6:30 Miguel 30 minutes
+Design - 30 minutes Miguel
+
+9/12 1:30pm-2:00pm Gage, Miguel, 30 minutes
+Driving - 15 minutes Miguel
+Driving - 15 minutes Gage
+
+9/13 12pm-6pm Gage, Miguel, 6 hours
+Driving - 30 minutes Miguel
+Driving - 30 minutes Gage
+Implementation - 2 hours Miguel and Gage
+Debugging - 3 hours Miguel and Gage
+
+9/14 1pm-2pm and 3pm-4pm,2 hours, Miguel and Gage
+Research - 30 minutes Miguel
+Research - 30 minutes Gage
+Driving - 30 minute Miguel
+Driving - 30 minutes Gage
+
+Only one computer open so no teletype
+9/17 5pm-7pm 2 hours Miguel and Gage
+Driving - 30 min Gage
+Driving - 30 min Miguel
+Driving - 30 min Gage
+Driving - 30 min Miguel
+
+Teletype again
+9/18 12pm-3:30 3.5 hours
+Driving - 30 min Gage
+Driving - 30 min Miguel
+Driving - 30 min Gage
+Debugging - 30 min Miguel
+Driving - 30 min Gage
+
+9/18 5pm-7:30pm 2.5 hours
+Debugging - 30 min Miguel
+Debugging - 30 min Gage
+Driving - 30 min Miguel
+Debugging - 30 min Gage
+Debugging - 30 min Miguel
+
+9/19 2pm - 3pm Gage and Miguel
+Driving - 45 min Miguel
+Debugging - 15 min Gage
+
+9/19 3:30-5pm Gage (Miguel had class)
+Driving 90 min Gage
+
+9/19 5pm-5:30 30 min Miguel
+Driving 30 min
+
+9/19 5:30-8 2.5 hours Gage and Miguel
+Driving Gage 30 min
+Driving Miguel 30 min
+Debugging/error check 1.5 hours Miguel and Gage

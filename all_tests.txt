@@ -1,0 +1,72 @@
+Testing...
+./sdriver.pl -t trace01.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace01.txt -s ./msh -a "-p"
+#								#
+# trace01.txt - Properly terminate on EOF.			# trace01.txt - Properly terminate on EOF.
+#								#
+./sdriver.pl -t trace02.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace02.txt -s ./msh -a "-p"
+#								#
+# trace02.txt - Process builtin quit command.			# trace02.txt - Process builtin quit command.
+#								#
+./sdriver.pl -t trace03.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace03.txt -s ./msh -a "-p"
+#								#
+# trace03.txt - Run a foreground job.				# trace03.txt - Run a foreground job.
+#								#
+msh> quit							msh> quit
+Testing...
+./sdriver.pl -t trace01.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace01.txt -s ./msh -a "-p"
+#								#
+# trace01.txt - Properly terminate on EOF.			# trace01.txt - Properly terminate on EOF.
+#								#
+./sdriver.pl -t trace02.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace02.txt -s ./msh -a "-p"
+#								#
+# trace02.txt - Process builtin quit command.			# trace02.txt - Process builtin quit command.
+#								#
+./sdriver.pl -t trace03.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace03.txt -s ./msh -a "-p"
+#								#
+# trace03.txt - Run a foreground job.				# trace03.txt - Run a foreground job.
+#								#
+msh> quit							msh> quit
+./sdriver.pl -t trace04.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace04.txt -s ./msh -a "-p"
+#								#
+# trace04.txt - Run a background job.				# trace04.txt - Run a background job.
+#								#
+msh> ./myspin 1 &						msh> ./myspin 1 &
+[1] (30615) ./myspin 1 &				      |	[1] (30607) ./myspin 1 &
+./sdriver.pl -t trace05.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace05.txt -s ./msh -a "-p"
+#								#
+# trace05.txt - Process jobs builtin command.			# trace05.txt - Process jobs builtin command.
+#								#
+msh> ./myspin 2 &						msh> ./myspin 2 &
+[1] (30637) ./myspin 2 &				      |	[1] (30624) ./myspin 2 &
+msh> ./myspin 3 &						msh> ./myspin 3 &
+[2] (30639) ./myspin 3 &				      |	[2] (30626) ./myspin 3 &
+msh> jobs							msh> jobs
+[1] (30637) Running ./myspin 2 &			      |	[1] (30624) Running ./myspin 2 &
+[2] (30639) Running ./myspin 3 &			      |	[2] (30626) Running ./myspin 3 &
+./sdriver.pl -t trace06.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace06.txt -s ./msh -a "-p"
+#								#
+# trace06.txt - Forward SIGINT to foreground job.		# trace06.txt - Forward SIGINT to foreground job.
+#								#
+msh> ./myspin 4							msh> ./myspin 4
+Job [1] (30664) terminated by signal 2			      |	Job [1] (30656) terminated by signal 2
+							      >	./sdriver.pl -t trace07.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace07.txt -s ./msh -a "-p"
+#								#
+# trace07.txt - Forward SIGINT only to foreground job.		# trace07.txt - Forward SIGINT only to foreground job.
+#								#
+msh> ./myspin 4 &						msh> ./myspin 4 &
+[1] (30689) ./myspin 4 &				      |	[1] (30675) ./myspin 4 &
+msh> ./myspin 5							msh> ./myspin 5
+Job [2] (30691) terminated by signal 2			      |	Job [2] (30677) terminated by signal 2
+msh> jobs						      |	msh> jobs
+[1] (30689) Running ./myspin 4 &			      |	[1] (30675) Running ./myspin 4 &
+./sdriver.pl -t trace08.txt -s ./mshref -a "-p"		      |	./sdriver.pl -t trace08.txt -s ./msh -a "-p"
+#								#
+# trace08.txt - Forward SIGTSTP only to foreground job.		# trace08.txt - Forward SIGTSTP only to foreground job.
+#								#
+msh> ./myspin 4 &						msh> ./myspin 4 &
+[1] (30718) ./myspin 4 &				      |	[1] (30705) ./myspin 4 &
+msh> ./myspin 5							msh> ./myspin 5
+Job [2] (30720) stopped by signal 20			      |	Job [2] (30707) stopped by signal 20
+msh> jobs						      |	msh> jobs
+[1] (30718) Running ./myspin 4 &			      |	[1] (30705) Running ./myspin 4 &
+[2] (30720) Stopped ./myspin 5 				      |	[2] (30707) Stopped ./myspin 5 
